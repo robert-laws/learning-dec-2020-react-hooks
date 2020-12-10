@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.scss';
+import StarRating from './components/StarRating';
 
 function App() {
   const [check, setCheck] = useState(false);
@@ -13,6 +14,10 @@ function App() {
         value={check}
         onChange={() => setCheck((prevCheck) => !prevCheck)}
       />
+      <hr />
+      <StarRating starCount={8} />
+      <hr />
+      <StarRating />
     </div>
   );
 }
