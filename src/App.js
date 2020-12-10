@@ -2,16 +2,17 @@ import { useState } from 'react';
 import './App.scss';
 
 function App() {
-  const [item, setItem] = useState('empty item...');
+  const [check, setCheck] = useState(false);
 
   return (
     <div className='App'>
-      <h1>Your item is: {item}</h1>
+      <h1>Checkbox: {check.toString()}</h1>
       <hr />
-      <input type='text' name='item' />
-      <button type='button' onClick={() => setItem('New Item')}>
-        Click Here
-      </button>
+      <input
+        type='checkbox'
+        value={check}
+        onChange={() => setCheck((prevCheck) => !prevCheck)}
+      />
     </div>
   );
 }
