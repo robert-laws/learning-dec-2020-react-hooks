@@ -1,12 +1,17 @@
+import { useState } from 'react';
 import './App.scss';
-import Heading from './components/Heading';
-import List from './components/List';
 
 function App() {
+  const [item, setItem] = useState('empty item...');
+
   return (
     <div className='App'>
-      <Heading headingType='h2' headingText='Welcome to the App' />
-      <List items={['hat', 'bat', 'mat', 'pencil']} />
+      <h1>Your item is: {item}</h1>
+      <hr />
+      <input type='text' name='item' />
+      <button type='button' onClick={() => setItem('New Item')}>
+        Click Here
+      </button>
     </div>
   );
 }
