@@ -1,9 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.scss';
 import StarRating from './components/StarRating';
 
 function App() {
   const [check, setCheck] = useState(false);
+  const [name, setName] = useState('Bob');
+
+  useEffect(() => {
+    document.title = `Celebrate ${name}`;
+  }, [name]);
 
   return (
     <div className='App'>
@@ -18,6 +23,11 @@ function App() {
       <StarRating starCount={8} />
       <hr />
       <StarRating />
+      <hr />
+      <section>
+        <p>Congrats {name}!</p>
+        <button onClick={() => setName('Hal')}>Change Winner</button>
+      </section>
     </div>
   );
 }
