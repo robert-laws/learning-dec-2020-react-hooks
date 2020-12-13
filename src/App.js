@@ -1,10 +1,10 @@
 import './App.scss';
-import ApplyCustomHook from './components/ApplyCustomHook';
+import GetData from './components/GetData';
 
 function App() {
   return (
     <div className='App'>
-      <ApplyCustomHook />
+      <GetData login='robdlaws' />
     </div>
   );
 }
